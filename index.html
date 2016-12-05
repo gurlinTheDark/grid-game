@@ -21,7 +21,8 @@
         <h1>GRID GAME</h1>
         <div class="jumbotron">
           <div ng-repeat="value in displayValues">
-            <div class="cell col-md-3"  ng-click= "switchColor(value)" ng-style={background:switchColor(value)}>{{value}}</div>
+            <div class="cell col-md-3"  ng-click= "switchColor(value)"
+            ng-style='{"background":value.color}' >{{value}}</div>
           </div>
         </div>
       </div>
