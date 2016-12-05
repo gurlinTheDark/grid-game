@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Grid Game</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="mainModule.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"></link>
+
+    <style>
+    .cell{
+      padding:10px;
+      border:2px solid #000;
+    }
+
+    </style>
+  </head>
+  <body ng-app="gridApp">
+      <div ng-controller="mainCtrl">
+        <h1>GRID GAME</h1>
+        <div class="jumbotron">
+          <div ng-repeat="value in displayValues">
+            <div class="cell col-md-3"  ng-click= "switchColor(value)" ng-style={background:switchColor(value)}>{{value}}</div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
