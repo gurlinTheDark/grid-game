@@ -5,13 +5,17 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/underscore/underscore-min.js"></script>
     <script src="mainModule.js"></script>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"></link>
 
     <style>
     .cell{
       padding:10px;
-      border:2px solid #000;
+      border:3px solid #000;
+      width:300px;
+      height:100px;
+      cursor: pointer;
     }
 
     </style>
@@ -19,10 +23,11 @@
   <body ng-app="gridApp">
       <div ng-controller="mainCtrl">
         <h1>GRID GAME</h1>
-        <div class="jumbotron">
+        <div class="">
+          <div><span>{{"Points:"+ points}}</span></div>
           <div ng-repeat="value in displayValues">
             <div class="cell col-md-3"  ng-click= "switchColor(value)"
-            ng-style='{"background":value.color}' >{{value}}</div>
+            ng-style='{"background":value.color}' ></div>
           </div>
         </div>
       </div>
